@@ -1,0 +1,29 @@
+.Footer {
+    /* text-align: center; */
+    /* position: fixed; */
+    margin-top: auto;
+    /* display: flex; */
+    height: 34px;
+    width: 100%;
+    background: rgba(48, 48, 48, 1);
+    /* z-index: 10; */
+}
+
+.Footer .container {
+    display: flex;
+}
+
+.Footer p {
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    color: #FFFFFF;
+}
+
+.Footer .media {
+    margin-left: auto;
+    margin-top: 6px;
+}
+.Footer .media :nth-child(1) img{
+    margin-right: 11px;
+}

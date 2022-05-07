@@ -1,0 +1,80 @@
+.Content {
+    color: #FFFFFF;
+    min-height: calc(100vh - 34px);
+}
+
+body {
+    background-image: url(../img/background2.jpg) ;
+    background-attachment: fixed;
+}
+
+
+
+.game {
+    margin-left: 280px;
+    padding-top: 90px;
+    /* margin-left: 100px; */
+    display: flex;
+    flex-wrap: wrap;
+    color: #000;
+}
+
+.cart {
+    width: 25.25%;
+    height: 287px;
+    margin-right: 5%;
+    margin-bottom: 4%;
+    background-color: #F48AF4;
+}
+
+
+.cartImg{
+    position: relative;
+    padding-bottom: 79.333%;
+    /* height: 214px; */
+    width: 100%;
+}
+
+.cartImg img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    object-position: center center;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    min-height: 214px;
+}
+
+.cart p {
+    margin: 0;
+    margin-top: 5px;
+    margin-left: 11px;
+    font-weight: 500;
+}
+
+
+#nameGame {
+    margin-top: 43px;
+    font-weight: 700;
+}
+
+.left_menu {
+	 height: 100%;
+	 width: 13%;
+    position: fixed;
+    background-color: #535353;
+	 margin-top: 54px;
+	 /* margin-left: 3.5%; */
+    z-index: -1; 
+	 display: flex;
+	 flex-direction: column;
+	 padding-top: 30px 
+/*	 text-align: center;*/
+}
+
+.left_menu_item {
+	text-align: center;
+	margin-bottom: 20px;
+}

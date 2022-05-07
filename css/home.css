@@ -1,0 +1,110 @@
+
+.Content {
+    /* width: max-content; */
+    background-image: url(../img/backgroundHome.png) ;
+    background-attachment: no-repeat;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1{
+    margin: 0;
+    font-size: 40px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    line-height: 49px;
+}
+
+.offer {
+    width: 606px;
+    padding-top: 275px;
+    padding-bottom: 228px;
+}
+
+.offer p {
+    font-size: 25px;
+    margin: 47px 0px;
+}
+
+.btn {
+    display: block;
+    
+    width: 270px;
+    height: 54px;
+    color: #000;   
+    background: linear-gradient(93.22deg, #45FEFE 0%, #EF45FE 100%);
+    box-shadow: 0px 18px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 59px;
+    align-items: center;
+}
+
+.btn p{
+    margin: 0;
+    
+    padding: 16px 62px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.btn a {
+    text-decoration: none;
+}
+
+.carts {
+    display: flex;
+    
+}
+
+.carts a{
+    color: #fff;
+    
+}
+
+.carts :nth-child(1) img{
+    margin: 0;
+    margin: 16px 19px 0px 20px;
+    align-items: center;
+}
+
+.carts :nth-child(1) p{
+    margin: 0;
+    margin: 10px 0px 0px 39px;
+}
+
+.carts :nth-child(2) img{
+    margin: 0;
+    margin: 30px 30px 0 30px;
+    align-items: center;
+}
+
+.carts :nth-child(2) p{
+    margin: 0 16px ;
+    margin-top: 18px;
+}
+
+.cart{
+    height: 212px;
+    width: 170px;
+    border-radius: 25px 25px 0 0;
+    background-color: #535353;
+    margin-right: 30px;
+}
+
+.cart p{
+    margin: 0;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+    
+}

@@ -1,0 +1,74 @@
+
+.Content {
+    color: #000;
+    min-height: calc(100vh - 34px);
+}
+
+body {
+    background-image: url(../img/background2.jpg) ;
+    background-attachment: fixed;
+}
+
+.newes {
+    margin-left: 70px;
+    padding-top: 92px;
+    /* margin-left: 100px; */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cart {
+    width: 27.5%;
+    height: 392px;
+    margin-right: 5%;
+    margin-bottom: 7%;
+    background-color: #F48AF4;
+}
+
+
+.cartImg{
+    position: relative;
+    padding-bottom: 79.333%;
+    /* height: 214px; */
+    width: 100%;
+}
+
+.cartImg img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    object-position: center center;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    min-height: 214px;
+}
+
+.cart p {
+    margin: 0;
+    margin-top: 5px;
+    margin-left: 11px;
+    font-weight: 500;
+}
+
+.info :nth-child(2){
+    margin: 0px 12px;
+    margin-top: 7px;
+
+}
+
+#nameGame {
+    margin-top: 14px;
+    font-weight: 700;
+}
+
+.info {
+    color: #000;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 6;
+    
+}
+
