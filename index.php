@@ -17,7 +17,7 @@ require('data.php');
     <title>JuegosGeniales</title>
 </head>
 <body>
-    <? include 'header.html'?>
+    <? include 'header.php'?>
 
     <div class="Content">
         <div class="container">

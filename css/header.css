@@ -70,7 +70,8 @@ ul, li{
     margin-left: auto;
 }
 .ava img {
-    border-radius: 50%
+    border-radius: 50%;
+    width: 38px;
 }
 
 .nav {

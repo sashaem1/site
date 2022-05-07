@@ -19,7 +19,7 @@ $games = mysqli_fetch_all($games);
     <title>JuegosGeniales</title>
 </head>
 <body>
-    <? include 'header.html'?>
+    <? include 'header.php'?>
     <div class="Content">
         <div class="container">
             <? include 'left_menu.html'?>

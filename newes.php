@@ -23,7 +23,7 @@ $news = mysqli_query($data, "select новость.идентификатор_н
     <title>JuegosGeniales</title>
 </head>
 <body>
-    <? include 'header.html'?>
+    <? include 'header.php'?>
     <section class="Content">
         <div class="container">
             <div class="newes">

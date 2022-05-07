@@ -28,7 +28,7 @@ $coments = mysqli_fetch_all($coments);
     <title>JuegosGeniales</title>
 </head>
 <body>
-    <? include 'header.html'?>
+    <? include 'header.php'?>
     <section class="Content">
         <div class="container">
             <div class="mainImg">

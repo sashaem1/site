@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <div class="Header">
     <div class="container">
         <div class="nav">
@@ -28,7 +32,7 @@
                 <!-- <div class="line"></div> -->
             </ul>
             <div class="ava">
-                <img src="img/avatar.jpg" alt="ava">
+                <img src="img/avatrs/<?=$_SESSION['user']['ava']?>" alt="ava">
             </div>
         </div>
     </div>
