@@ -2,7 +2,9 @@
 // require('data.php');
 session_start();
 require('bd.php');
-
+if ($_SESSION['user'] ) {
+    header('Location: profile.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +25,7 @@ require('bd.php');
 <body>
     <? include 'header.php'?>
     <section class="Content">
-        <div class="container">
+        <div class="container_ava">
             <div class="auto">
                 <form action="actions/singin.php" method="post" >
                     <label for="">Логин</label>

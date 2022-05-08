@@ -1,5 +1,5 @@
 <?php
-require('data.php');
+session_start();
 require('bd.php');
 $news = mysqli_query($data, "select новость.идентификатор_новости, название, содержание, изображение from изображение
 join новость on изображение.Новость_идентификатор_новости = новость.идентификатор_новости
@@ -43,11 +43,15 @@ $coments = mysqli_fetch_all($coments);
             <div class="feed">
                 <div class="title">
                     <h1>Отзывы</h1>
-                    <div class="btn">
-                        <p>Коментировать</p>
-                    </div>
+                        <!-- <script src="js/com_btn.js"> -->
+                            <?php 
+                                if($_SESSION['user']) echo '
+                                    <div class="btn">
+                                            <p>Коментировать</p>
+                                    </div>';
+                            ?>
+                        <!--</script> -->
                 </div>
-                
                 <?php 
                     for($j=0; $j<count($coments); $j++) :
                         if($_GET['id'] == $coments[$j][2]) :
@@ -68,7 +72,7 @@ $coments = mysqli_fetch_all($coments);
             </div>
         </div>
     </section>
-
+                <script src="js/com_btn.js"></script>
 
     <? include ('footer.html')?>
 </body>

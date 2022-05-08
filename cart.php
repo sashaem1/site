@@ -1,4 +1,5 @@
 <?php
+session_start();
 require('bd.php');
 $games = mysqli_query($data, "SELECT * FROM `игра`");
 $games = mysqli_fetch_all($games);
@@ -38,9 +39,12 @@ $coments = mysqli_fetch_all($coments);
             <div class="feed">
                 <div class="title">
                     <h1>Отзывы</h1>
-                    <div class="btn">
-                        <p>Коментировать</p>
-                    </div>
+                    <?php 
+                            if($_SESSION['user']) echo '
+                            <div class="btn">
+                                <p>Коментировать</p>
+                            </div>';
+                        ?>
                 </div>
                 
                 <?php 

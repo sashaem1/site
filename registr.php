@@ -2,6 +2,9 @@
 session_start();
 // require('data.php');
 require('bd.php');
+if ($_SESSION['user'] ) {
+    header('Location: profile.php');
+}
 
 ?>
 
@@ -23,7 +26,7 @@ require('bd.php');
 <body>
     <? include 'header.php'?>
     <section class="Content">
-        <div class="container">
+        <div class="container_ava">
             <div class="auto">
                 <form action="actions/singup.php" method="post" enctype="multipart/form-data" >
                     <label for="">Имя пользователя</label>

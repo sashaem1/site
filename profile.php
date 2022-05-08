@@ -2,6 +2,9 @@
 // require('data.php');
 session_start();
 require('bd.php');
+if (!$_SESSION['user'] ) {
+    header('Location: autoris.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -22,9 +25,9 @@ require('bd.php');
 <body>
     <? include 'header.php'?>
     <section class="Content">
-        <div class="container">
+        <div class="container_ava">
             <div class="auto">
-                <form action="actions/singup.php" method="post" enctype="multipart/form-data" >
+                <form action="" method="post" enctype="multipart/form-data" >
                     <label for="">Имя пользователя</label>
                     <input type="text" name="name">
                     <label for="">Логин</label>
@@ -42,14 +45,14 @@ require('bd.php');
                     <input type="pasword" name="pasword">
                     <label for="">Подтверждение пароля</label>
                     <input type="pasword" name="pasword_confirm">
-                    <button type="submit">Сохранить изменения</button>
+                    <div class="buttons">
+                        <button type="submit">Сохранить изменения</button>
+                        <button type="submit" formaction="actions/logout.php">Выйти из аккаунта</button>
+                    </div>
+                    
                     <!-- <p>Есть аккаунт? <a href="autoris.php">Авторируйтесь</a>!</p> -->
                         <?php 
-                            if($_SESSION['msg']){
-                                echo '<p class="msg">'.  $_SESSION['user']['name'] . '</p>';
-                                echo '<p class="msg">'.  $_SESSION['user']['ava'] . '</p>';
-                            }
-                            unset($_SESSION['msg']); 
+                             
                         ?>
                 </form>
             </div>

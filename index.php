@@ -1,5 +1,5 @@
 <?php
-require('data.php');
+session_start();
 ?>
 
 <!DOCTYPE html>

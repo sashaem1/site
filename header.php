@@ -32,7 +32,7 @@
                 <!-- <div class="line"></div> -->
             </ul>
             <div class="ava">
-                <img src="img/avatrs/<?=$_SESSION['user']['ava']?>" alt="ava">
+                <a  href="profile.php"><img src="img/avatrs/<?=$_SESSION['user']['ava'] ? $_SESSION['user']['ava'] : 'noname.jpg' ?>" alt="ava"></a>
             </div>
         </div>
     </div>
