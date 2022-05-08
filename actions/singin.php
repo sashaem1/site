@@ -14,7 +14,8 @@
 
         $_SESSION['user'] = [
             "name" => $user['имя_пользователя'],
-            "ava" => $user['фото_профиля']
+            "ava" => $user['фото_профиля'],
+            "type" => $user['Тип_пользователя_тип_пользователя']
         ];
         header('Location: ../profile.php');
         

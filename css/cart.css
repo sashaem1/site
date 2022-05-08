@@ -129,3 +129,49 @@ h1 {
     background-color: #535353;
     outline: none;
 }
+
+.com_btn {
+    display: block;
+    margin-top: 27px;
+    margin-right: 20px;
+    background: linear-gradient(93.22deg, #45FEFE 0%, #EF45FE 100%);
+    /* background-color: linear-gradient(93.22deg, #45FEFE 0%, #EF45FE 100%); */
+    display: block;
+    margin-left: auto;
+    width: 139px;
+    height: 25px;
+    color: #000;   
+    box-shadow: 0px 18px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    align-items: center;
+    cursor: pointer;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;   
+}
+
+.cancell_btn {
+    display: block;
+    margin-top: 27px;
+    /* margin-right: 10px; */
+    background: linear-gradient(93.22deg, #45FEFE 0%, #EF45FE 100%);
+    /* background-color: linear-gradient(93.22deg, #45FEFE 0%, #EF45FE 100%); */
+    display: block;
+    /* margin-left: auto; */
+    width: 139px;
+    height: 25px;
+    color: #000;   
+    box-shadow: 0px 18px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    align-items: center;
+    cursor: pointer;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+}
+
+.btn_block {
+    margin-left: auto;
+}

@@ -1,6 +1,7 @@
 <?php
 session_start();
 require('bd.php');
+$_SESSION['com_id'] = $_GET['id'];
 $games = mysqli_query($data, "SELECT * FROM `игра`");
 $games = mysqli_fetch_all($games);
 $coments = mysqli_query($data, "SELECT идентификатор_отзыва, отзыв.имя_пользователя,
