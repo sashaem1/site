@@ -1,10 +1,10 @@
 <?php
 session_start();
 require('bd.php');
-$_SESSION['com_id'] = $_GET['id'];
+$_SESSION['game_id'] = $_GET['id'];
 $games = mysqli_query($data, "SELECT * FROM `игра`");
 $games = mysqli_fetch_all($games);
-$coments = mysqli_query($data, "SELECT идентификатор_отзыва, отзыв.имя_пользователя,
+$coments = mysqli_query($data, "SELECT DISTINCT идентификатор_отзыва, отзыв.имя_пользователя,
 идентификатор_игры, рейтинг, текст, фото_профиля 
 FROM `отзыв` join пользователь on пользователь.имя_пользователя = отзыв.имя_пользователя");
 $coments = mysqli_fetch_all($coments);
@@ -40,11 +40,11 @@ $coments = mysqli_fetch_all($coments);
             <div class="feed">
                 <div class="title">
                     <h1>Отзывы</h1>
-                    <?php 
+                        <?php 
                             if($_SESSION['user']) echo '
-                            <div class="btn">
-                                <p>Коментировать</p>
-                            </div>';
+                                <div class="btn">
+                                     <p>Коментировать</p>
+                                </div>';
                         ?>
                 </div>
                 
@@ -54,7 +54,7 @@ $coments = mysqli_fetch_all($coments);
                 ?>
                 <div class="cart">
                     <div class="user_ava">
-                        <img src="img/newes/<?=$coments[$j][5]?>.jpg" alt="">
+                        <img src="img/avatrs/<?=$coments[$j][5]?>" alt="">
                     </div>
                     <div class="comment">
                         <h2><?=$coments[$j][1] ?></h2>
@@ -69,7 +69,7 @@ $coments = mysqli_fetch_all($coments);
         </div>
     </section>
 
-
+    <script src="js/rev_btn.js"></script>
     <? include ('footer.html')?>
 </body>
 </html>

@@ -137,7 +137,7 @@ h1 {
     background: linear-gradient(93.22deg, #45FEFE 0%, #EF45FE 100%);
     /* background-color: linear-gradient(93.22deg, #45FEFE 0%, #EF45FE 100%); */
     display: block;
-    /* margin-left: auto; */
+    margin-left: auto;
     width: 139px;
     height: 25px;
     color: #000;   
@@ -174,28 +174,4 @@ h1 {
 
 .btn_block {
     margin-left: auto;
-}
-
-.grade_block {
-    display: flex;
-    height: 25px;
-    margin-top: auto;
-    margin-left: auto;  
-    margin-right: 20px;
-}
-
-.grade_block :nth-child(1){
-    margin: 0;
-    margin-top: auto;
-    margin-right: 20px;
-    font-size: larger;
-}
-
-.grade {
-    height: 25px;
-    border: unset;
-    color: #fff;
-    border-bottom: 1px solid #fff;
-    background-color: #535353;
-    /* border-radius: 10px; */
 }

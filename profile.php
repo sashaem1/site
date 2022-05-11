@@ -27,11 +27,9 @@ if (!$_SESSION['user'] ) {
     <section class="Content">
         <div class="container_ava">
             <div class="auto">
-                <form action="" method="post" enctype="multipart/form-data" >
-                    <label for="">Имя пользователя</label>
-                    <input type="text" name="name">
-                    <label for="">Логин</label>
-                    <input type="text" name="login">
+                <form action="actions/change_data.php" method="post" enctype="multipart/form-data" >
+                    <!-- <label for="">Имя пользователя</label>
+                    <input type="text" name="name"> -->
                     <div class="img_user">
                         <label for="">Аватар</label>
                         <input type="file" name="ava">

@@ -6,7 +6,6 @@ $btn.addEventListener('click', function(event) {
         var $form = document.createElement('form');
         $form.action = "actions/comment.php";
         $form.method = "post";
-        // $form.style.display = 'flex';
 
         var $btn_block = document.createElement('div');
         $btn_block.classList.add('btn_block');
@@ -18,7 +17,6 @@ $btn.addEventListener('click', function(event) {
         $input.name = "text";
         $input.placeholder = 'Ваш комментарий';
         $input.classList.add('amount');
-        // $input.style.display = 'block';
 
         var $com_btn = document.createElement('button');
         $com_btn.classList.add('com_btn');
@@ -37,13 +35,6 @@ $btn.addEventListener('click', function(event) {
         $form.append($input);
         $form.append($btn_block);
         $btn_block.append($com_btn);
-        // $input.after($com_btn);
         $com_btn.after($cancell_btn);
-    } else if(document.getElementsByClassName('amount') != "") {
-        var com = document.getElementsByClassName('amount')[0].value;
-        // fetch('../actions/comment.php', {
-        //     method: 'POST', 
-        //     body: "text=" + com
-        // });
     }
   });

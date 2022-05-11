@@ -8,7 +8,7 @@ GROUP BY новость.идентификатор_новости, изобра�
 ORDER BY  новость.идентификатор_новости");
 $news = mysqli_fetch_all($news);
 // mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-$coments = mysqli_query($data, "SELECT идентификатор_комментария, идентификатор_родителя,
+$coments = mysqli_query($data, "SELECT DISTINCT идентификатор_комментария, идентификатор_родителя,
 идентификатор_новости, комментарий.имя_пользователя, текст, фото_профиля 
 FROM `комментарий` join пользователь on пользователь.имя_пользователя = комментарий.имя_пользователя");
 $coments = mysqli_fetch_all($coments);
@@ -21,7 +21,7 @@ $coments = mysqli_fetch_all($coments);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/new.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,7 +59,7 @@ $coments = mysqli_fetch_all($coments);
                 ?>
                 <div class="cart">
                     <div class="user_ava">
-                        <img src="img/newes/<?=$coments[$j][5]?>.jpg" alt="">
+                        <img src="img/avatrs/<?=$coments[$j][5]?>" alt="">
                     </div>
                     <div class="comment">
                         <h2><?=$coments[$j][3] ?></h2>
