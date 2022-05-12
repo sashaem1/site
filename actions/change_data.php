@@ -1,6 +1,8 @@
 <?php
     session_start();
-    require_once ('../bd.php');
+//    require_once ('../bd.php');
+    include '../bd.php';
+    $data = connect_db();
 
     $old_name = $_SESSION['user']['name'];
 

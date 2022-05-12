@@ -1,17 +1,21 @@
 <?php
 session_start();
-require('bd.php');
+include 'bd.php';
 $_SESSION['com_id'] = $_GET['id'];
-$news = mysqli_query($data, "select новость.идентификатор_новости, название, содержание, изображение from изображение
-join новость on изображение.Новость_идентификатор_новости = новость.идентификатор_новости
-GROUP BY новость.идентификатор_новости, изображение
-ORDER BY  новость.идентификатор_новости");
-$news = mysqli_fetch_all($news);
-// mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-$coments = mysqli_query($data, "SELECT DISTINCT идентификатор_комментария, идентификатор_родителя,
-идентификатор_новости, комментарий.имя_пользователя, текст, фото_профиля 
-FROM `комментарий` join пользователь on пользователь.имя_пользователя = комментарий.имя_пользователя");
-$coments = mysqli_fetch_all($coments);
+//$news = mysqli_query($data, "select новость.идентификатор_новости, название, содержание, изображение from изображение
+//join новость on изображение.Новость_идентификатор_новости = новость.идентификатор_новости
+//GROUP BY новость.идентификатор_новости, изображение
+//ORDER BY  новость.идентификатор_новости");
+//$news = mysqli_fetch_all($news);
+//// mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+//$coments = mysqli_query($data, "SELECT DISTINCT идентификатор_комментария, идентификатор_родителя,
+//идентификатор_новости, комментарий.имя_пользователя, текст, фото_профиля 
+//FROM `комментарий` join пользователь on пользователь.имя_пользователя = комментарий.имя_пользователя");
+//$coments = mysqli_fetch_all($coments);
+
+$db = connect_db();
+$news = get_news($db);
+$comments = get_comments($db);
 ?>
 
 <!DOCTYPE html>
@@ -43,27 +47,27 @@ $coments = mysqli_fetch_all($coments);
             </div>
             <div class="feed">
                 <div class="title">
-                    <h1>Отзывы</h1>
+                    <h1>Комментарии</h1>
                         <!-- <script src="js/com_btn.js"> -->
                             <?php 
                                 if($_SESSION['user']) echo '
                                     <div class="btn">
-                                            <p>Коментировать</p>
+                                            <p>Комментировать</p>
                                     </div>';
                             ?>
                         <!--</script> -->
                 </div>
                 <?php 
-                    for($j=0; $j<count($coments); $j++) :
-                        if($_GET['id'] == $coments[$j][2]) :
+                    for($j=0; $j<count($comments); $j++) :
+                        if($_GET['id'] == $comments[$j][2]) :
                 ?>
                 <div class="cart">
                     <div class="user_ava">
-                        <img src="img/avatrs/<?=$coments[$j][5]?>" alt="">
+                        <img src="img/avatrs/<?=$comments[$j][5]?>" alt="">
                     </div>
                     <div class="comment">
-                        <h2><?=$coments[$j][3] ?></h2>
-                        <p><?=$coments[$j][4] ?></p>
+                        <h2><?=$comments[$j][3] ?></h2>
+                        <p><?=$comments[$j][4] ?></p>
                     </div>
                 </div>
                 <?php 

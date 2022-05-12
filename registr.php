@@ -1,7 +1,9 @@
 <?php
 session_start();
 // require('data.php');
-require('bd.php');
+//require('bd.php');
+include 'bd.php';
+$data = connect_db();
 if ($_SESSION['user'] ) {
     header('Location: profile.php');
 }

@@ -1,13 +1,17 @@
 <?php
 session_start();
-require('bd.php');
+//require('bd.php');
 $_SESSION['game_id'] = $_GET['id'];
-$games = mysqli_query($data, "SELECT * FROM `игра`");
-$games = mysqli_fetch_all($games);
-$coments = mysqli_query($data, "SELECT DISTINCT идентификатор_отзыва, отзыв.имя_пользователя,
-идентификатор_игры, рейтинг, текст, фото_профиля 
-FROM `отзыв` join пользователь on пользователь.имя_пользователя = отзыв.имя_пользователя");
-$coments = mysqli_fetch_all($coments);
+//$games = mysqli_query($data, "SELECT * FROM `игра`");
+//$games = mysqli_fetch_all($games);
+//$coments = mysqli_query($data, "SELECT DISTINCT идентификатор_отзыва, отзыв.имя_пользователя,
+//идентификатор_игры, рейтинг, текст, фото_профиля 
+//FROM `отзыв` join пользователь on пользователь.имя_пользователя = отзыв.имя_пользователя");
+//$coments = mysqli_fetch_all($coments);
+include 'bd.php';
+$db = connect_db();
+$games = get_games($db);
+$reviews = get_reviews($db);
 ?>
 
 <!DOCTYPE html>
@@ -43,22 +47,22 @@ $coments = mysqli_fetch_all($coments);
                         <?php 
                             if($_SESSION['user']) echo '
                                 <div class="btn">
-                                     <p>Коментировать</p>
+                                     <p>Комментировать</p>
                                 </div>';
                         ?>
                 </div>
                 
                 <?php 
-                    for($j=0; $j<count($coments); $j++) :
-                        if($_GET['id'] == $coments[$j][2]) :
+                    for($j=0; $j<count($reviews); $j++) :
+                        if($_GET['id'] == $reviews[$j][2]) :
                 ?>
                 <div class="cart">
                     <div class="user_ava">
-                        <img src="img/avatrs/<?=$coments[$j][5]?>" alt="">
+                        <img src="img/avatrs/<?=$reviews[$j][5]?>" alt="">
                     </div>
                     <div class="comment">
-                        <h2><?=$coments[$j][1] ?></h2>
-                        <p><?=$coments[$j][4] ?></p>
+                        <h2><?=$reviews[$j][1] ?></h2>
+                        <p><?=$reviews[$j][4] ?></p>
                     </div>
                 </div>
                 <?php 
