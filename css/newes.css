@@ -43,6 +43,7 @@ body {
     width: 100%;
     max-width: 100%;
     min-height: 214px;
+    /* min-width: 100%; */
 }
 
 .cart p {
@@ -72,3 +73,39 @@ body {
     
 }
 
+/* форма */
+    .cart :nth-child(3) {
+        position: absolute;
+        margin: 0;
+        margin-right: 24px;
+        /* margin-left: 270px; */
+        /* margin-top: -5px; */
+        margin-bottom: 5px;
+        /* margin-left: auto;
+        margin-top: auto; */
+    }
+
+/* кнопка формы */
+.cross {
+    /* visibility: hidden; */
+    width: 25px;
+    height: 25px;
+    background-color: #ffffff00;
+    /* background-image: url("img/games/cart1.jpg"); */
+    cursor: pointer;
+    border: none;
+}
+
+/* картинка кнопки */
+.cross :nth-child(1) {
+    height: 25px;
+    width: 25px;
+    margin: 0;
+    padding: 0;
+    margin-top: -3px;
+    margin-left: -8px;
+}
+
+.cart:hover .cart :nth-child(1) :nth-child(1){
+    visibility: visible;
+}

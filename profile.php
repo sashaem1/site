@@ -50,7 +50,10 @@ if (!$_SESSION['user'] ) {
                     
                     <!-- <p>Есть аккаунт? <a href="autoris.php">Авторируйтесь</a>!</p> -->
                         <?php 
-                             
+                            if($_SESSION['msg']){
+                                echo '<p class="msg">'.  $_SESSION['msg'] . '</p>';
+                            }
+                            unset($_SESSION['msg']);  
                         ?>
                 </form>
             </div>

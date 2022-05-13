@@ -11,20 +11,25 @@ $data = connect_db();
     $file_name = $_FILES['ava']['name'];
     
     if($pasword === $pasword_confirm){
-        $path = 'img/avatrs/'. $_FILES['ava']['name'];
-        if(!move_uploaded_file($_FILES['ava']['tmp_name'], '../'. $path)){
-            $_SESSION['msg']='Ошибка при загрузке изображения';
-            header('Location: ../registr.php');      
-        }
+        if(strlen($pasword) > 3){
+            $path = 'img/avatrs/'. $_FILES['ava']['name'];
+            if(!move_uploaded_file($_FILES['ava']['tmp_name'], '../'. $path)){
+                $_SESSION['msg']='Ошибка при загрузке изображения';
+                header('Location: ../registr.php');      
+            }
 
-        $pasword = md5($pasword);
+            $pasword = md5($pasword);
 
-        mysqli_query($data, "INSERT INTO `пользователь` 
-        (`id_пользователя`, `имя_пользователя`, `логин`, `пароль`, `фото_профиля`, `Тип_пользователя_тип_пользователя`) 
-        VALUES (NULL, '$name', '$login', '$pasword', '$file_name', 'авторизованный')");
+            mysqli_query($data, "INSERT INTO `пользователь` 
+            (`id_пользователя`, `имя_пользователя`, `логин`, `пароль`, `фото_профиля`, `Тип_пользователя_тип_пользователя`) 
+            VALUES (NULL, '$name', '$login', '$pasword', '$file_name', 'авторизованный')");
 
-        $_SESSION['msg']='Регистрация прошла успешно';
-        header('Location: ../autoris.php'); 
+            $_SESSION['msg']='Регистрация прошла успешно';
+            header('Location: ../autoris.php');
+        } else {
+            $_SESSION['msg']='Пароль слишком короткий';
+        header('Location: ../registr.php');
+        } 
         
     } else {
         $_SESSION['msg']='Пароли не совпадают';

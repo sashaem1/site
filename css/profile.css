@@ -85,13 +85,22 @@ button {
 }
 
 .img_view :nth-child(1){
+    height: 100px;
     width: 100px;
+    object-fit: cover;
+    object-position: center center;
 }
 
 .img_view  :nth-child(2){
+    height: 75px;
     width: 75px;
+    object-fit: cover;
+    object-position: center center;
 }
 
 .img_view  :nth-child(3){
+    height: 38px;
     width: 38px;
+    object-fit: cover;
+    object-position: center center;
 }

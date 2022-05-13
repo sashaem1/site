@@ -19,6 +19,7 @@
             "ava" => $user['фото_профиля'],
             "type" => $user['Тип_пользователя_тип_пользователя']
         ];
+        // $_SESSION['msg']=$_SESSION['user']['type'];
         header('Location: ../profile.php');
         
     } else {

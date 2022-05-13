@@ -33,7 +33,9 @@ $news = get_news($db);
                 <?php 
                     for($j=0; $j<count($news); $j++) :
                 ?>
+                
                 <div class="cart">
+                    
                     <div class="cartImg">
                         <a href="new.php?id=<?= $news[$j][0] ?>"><img src="img/newes/<?=$news[$j][3]?>.jpg" alt=""></a>
                     </div>
@@ -41,6 +43,11 @@ $news = get_news($db);
                         <p id="nameGame"><?=$news[$j][1] ?></p>
                         <?=$news[$j][2]?>
                     </div>
+                    <form action="actions/delet_com.php" method="post">
+                                <button class="cross" value="'. $comments[$j][0] . '" name="id" id="btn">
+                                    <img src="img/cross2.svg" alt="">
+                                </button>
+                            </form >
                 </div>
                 <?php 
                 endfor;

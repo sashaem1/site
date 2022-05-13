@@ -38,3 +38,14 @@ $btn.addEventListener('click', function(event) {
         $com_btn.after($cancell_btn);
     }
   });
+
+// var $com_block = document.getElementsByClassName('cart')[0];
+// $com_block.addEventListener('mousemove', function(event) {
+//     // alert ("Hello");
+//     var $cross1 = document.getElementsByClassName('cross')[0];
+//     // alert (typeof $com_block);        
+//     $cross1.style.visibility = "visible";
+
+//     // alert ("Hello");
+//     // alert( typeof 1 );
+// });

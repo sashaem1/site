@@ -66,7 +66,17 @@ $comments = get_comments($db);
                         <img src="img/avatrs/<?=$comments[$j][5]?>" alt="">
                     </div>
                     <div class="comment">
-                        <h2><?=$comments[$j][3] ?></h2>
+                        <div class="user_name">
+                            <h2><?=$comments[$j][3] ?></h2>
+                            <?php 
+                            if($_SESSION['user']['type'] === "администратор" || $_SESSION['user']['name'] === $comments[$j][3])
+                             echo '<form action="actions/delet_com.php" method="post">
+                                <button class="cross" value="'. $comments[$j][0] . '" name="id" id="btn">
+                                    <img src="img/cross2.svg" alt="">
+                                </button>
+                            </form >';
+                            ?>
+                        </div>
                         <p><?=$comments[$j][4] ?></p>
                     </div>
                 </div>

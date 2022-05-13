@@ -36,7 +36,7 @@ if ($_SESSION['user'] ) {
                     <button type="submit">Войти</button>
                     <p>Нет аккаунта? <a href="registr.php">Зарегистрируйтесь</a>!</p>
                     <?php 
-                            if($_SESSION){
+                            if($_SESSION['msg']){
                                 echo '<p class="msg">'.  $_SESSION['msg'] . '</p>';
                             }
                             unset($_SESSION['msg']); 

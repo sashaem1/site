@@ -24,7 +24,12 @@
         $query = $query . "`имя_пользователя` = '$name'";
         $change_count +=1;
     }
-    if ($pasword != "" && strlen($pasword)>2 && $pasword_confirm === $pasword) {
+    if ($pasword != "" && $pasword_confirm === $pasword) {
+        if(strlen($pasword) <= 3)
+        {
+            $_SESSION['msg']='Пароль слишком короткий';
+            header('Location: ../profile.php');
+        }
         if($change_count > 0) $query = $query .", ";
         $pasword = md5($pasword);
         $query = $query . "`пароль` = '$pasword'";
@@ -34,11 +39,13 @@
         $path = 'img/avatrs/'. $_FILES['ava']['name'];
         if(!move_uploaded_file($_FILES['ava']['tmp_name'], '../'. $path)){
             $_SESSION['msg']='Ошибка при загрузке изображения';
-            header('Location: ../registr.php');      
+            header('Location: ../profile.php');      
         }
         if($change_count > 0) $query = $query .", ";
         $query = $query . "`фото_профиля` = '$file_name'";
         $change_count +=1;
+
+        $_SESSION['user']['ava']=$file_name;
     }
     if($change_count>0){
         $query = $query . " WHERE `пользователь`.`id_пользователя` = $id";
@@ -46,7 +53,7 @@
     }
     // echo $query;
 
-    $_SESSION['user']['ava']=$file_name;
+    
 
     header('Location: ../profile.php');
 ?>

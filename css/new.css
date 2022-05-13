@@ -115,7 +115,7 @@ h1 {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
-    font-size: 25px;
+    font-size: 23px;
     line-height: 30px;
 }
 
@@ -174,4 +174,46 @@ h1 {
 
 .btn_block {
     margin-left: auto;
+}
+
+.comment {
+    display: block;
+    width: 100%;
+}
+
+.user_name {
+    display: flex;
+}
+
+/* форма */
+.user_name :nth-child(2) {
+    margin: 0;
+    margin-right: 24px;
+    margin-left: auto;
+    margin-top: auto;
+}
+
+/* кнопка формы */
+.user_name :nth-child(2) :nth-child(1) {
+    visibility: hidden;
+    width: 25px;
+    height: 25px;
+    background-color: #ffffff00;
+    /* background-image: url("img/games/cart1.jpg"); */
+    cursor: pointer;
+    border: none;
+}
+
+/* картинка кнопки */
+.user_name :nth-child(2) :nth-child(1) :nth-child(1) {
+    height: 25px;
+    width: 25px;
+    margin: 0;
+    padding: 0;
+    margin-top: -3px;
+    margin-left: -8px;
+}
+
+.cart:hover .user_name :nth-child(2) :nth-child(1){
+    visibility: visible;
 }
