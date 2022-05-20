@@ -37,26 +37,62 @@ $news = get_news($db);
                 <div class="cart">
                     
                     <div class="cartImg">
-                        <a href="new.php?id=<?= $news[$j][0] ?>"><img src="img/newes/<?=$news[$j][3]?>.jpg" alt=""></a>
+                        <a href="new.php?id=<?= $news[$j][0] ?>"><img src="img/newes/<?=$news[$j][3]?>" alt=""></a>
                     </div>
                     <div class="info">
                         <p id="nameGame"><?=$news[$j][1] ?></p>
                         <?=$news[$j][2]?>
                     </div>
-                    <form action="actions/delet_com.php" method="post">
-                                <button class="cross" value="'. $comments[$j][0] . '" name="id" id="btn">
-                                    <img src="img/cross2.svg" alt="">
+                    <?php
+                     echo '<form action="actions/delet_news.php" method="post">
+                                <button class="pencil" value="'. $news[$j][0] . '" name="id" id="btn1">
+                                    <img src="img/pencil2.svg" alt="">
                                 </button>
-                            </form >
+                                <button class="cross" value="'. $news[$j][0] . '" name="id" id="btn2">
+                                    <img src="img/cross2.svg"  alt="">
+                                </button>
+                                
+                            </form >';
+                    ?>        
                 </div>
                 <?php 
                 endfor;
-                ?>     
+                if($_SESSION['user']['type'] === "администратор"):
+                ?>
+                <div class="cart" id="add"> 
+                    
+                    <div class="addImg">
+                        <img src="img/plus2.png" alt="">
+                    </div>
+                    <div class="info">
+                        <p id="nameGame">Добавить новую новость</p>
+                        <?=$news[$j][2]?>
+                    </div>
+                    <button class="add_btn"></button>
+                </div>    
+                <?php endif; ?>    
+            </div>
+            <div class="add_container">
+                <div class="add_body">
+                    <form action="actions\add_news.php" method="post" class="form" enctype="multipart/form-data">
+                        <label for="">Картинка новости</label>
+                        <input type="file" name="new_img">
+                        <label for="">Имя новости</label>
+                        <input type="text" name="new_name">
+                        <label for="">Текст новости</label>
+                        <textarea  rows="10" name="new_text"></textarea>
+                        <!-- <textarea type="text" name="new_text"> -->
+                        <div class="buttons">
+                            <button type="submit">Добавить новость</button>
+                            <button type="submit" formaction="" id="can_btn1">Отмена</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-
+    <script src="js/add_new2.js"></script>
     <? include ('footer.html')?>
 </body>
 </html>

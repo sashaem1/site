@@ -4,6 +4,8 @@
     min-height: calc(100vh - 34px);
 }
 
+
+
 body {
     background-image: url(../img/background2.jpg) ;
     background-attachment: fixed;
@@ -137,7 +139,7 @@ h1 {
     background: linear-gradient(93.22deg, #45FEFE 0%, #EF45FE 100%);
     /* background-color: linear-gradient(93.22deg, #45FEFE 0%, #EF45FE 100%); */
     display: block;
-    /* margin-left: auto; */
+    margin-left: auto;
     width: 139px;
     height: 25px;
     color: #000;   
@@ -186,7 +188,7 @@ h1 {
 }
 
 /* форма */
-.user_name :nth-child(3) {
+.user_name :nth-child(2) {
     margin: 0;
     margin-right: 24px;
     margin-left: auto;
@@ -194,7 +196,7 @@ h1 {
 }
 
 /* кнопка формы */
-.user_name :nth-child(3) :nth-child(1) {
+.user_name :nth-child(2) :nth-child(1) {
     visibility: hidden;
     width: 25px;
     height: 25px;
@@ -205,7 +207,7 @@ h1 {
 }
 
 /* картинка кнопки */
-.user_name :nth-child(3) :nth-child(3) :nth-child(1) {
+.user_name :nth-child(2) :nth-child(1) :nth-child(1) {
     height: 25px;
     width: 25px;
     margin: 0;
@@ -214,16 +216,24 @@ h1 {
     margin-left: -8px;
 }
 
-.cart:hover .user_name :nth-child(3) :nth-child(1){
+.cart:hover .user_name :nth-child(2) :nth-child(1){
     visibility: visible;
 }
 
-.user_name p{
-    margin: 0;
-    padding: 0;
+.main_form {
+    background-color: #535353;
+    padding-top: 50px;
+    width: 100%;
 
-    margin-top: 22px;
-    margin-left: 70px;
+    display: block;
+}
 
-    font-size: larger;
+.add_img {
+    margin-left: auto;
+}
+
+.info_imput {
+    display: block;
+    margin-left: auto;  
+    margin-bottom: 20px;
 }

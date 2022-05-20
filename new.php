@@ -2,6 +2,7 @@
 session_start();
 include 'bd.php';
 $_SESSION['com_id'] = $_GET['id'];
+$id = $_GET['id'];
 //$news = mysqli_query($data, "select новость.идентификатор_новости, название, содержание, изображение from изображение
 //join новость on изображение.Новость_идентификатор_новости = новость.идентификатор_новости
 //GROUP BY новость.идентификатор_новости, изображение
@@ -14,7 +15,7 @@ $_SESSION['com_id'] = $_GET['id'];
 //$coments = mysqli_fetch_all($coments);
 
 $db = connect_db();
-$news = get_news($db);
+$new = get_new($db, $id);
 $comments = get_comments($db);
 ?>
 
@@ -37,12 +38,12 @@ $comments = get_comments($db);
     <section class="Content">
         <div class="container">
             <div class="mainImg">
-                <img src="img/newes/<?=$news[$_GET['id']-1][3]?>.jpg" alt="">
+                <img src="img/newes/<?=$new[3]?>" alt="">
             </div>
             <div class="info">
-                <h1><?=$news[$_GET['id']-1][1] ?></h1>
+                <h1><?=$new[1] ?></h1>
                 <div class="about">
-                    <?=$news[$_GET['id']-1][2] ?>
+                    <?=$new[2] ?>
                 </div>
             </div>
             <div class="feed">

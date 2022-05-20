@@ -18,6 +18,7 @@ body {
 }
 
 .cart {
+    position: relative;
     width: 27.5%;
     height: 392px;
     margin-right: 5%;
@@ -77,19 +78,19 @@ body {
     .cart :nth-child(3) {
         position: absolute;
         margin: 0;
-        margin-right: 24px;
-        /* margin-left: 270px; */
-        /* margin-top: -5px; */
+        top: 0;
+        right: 0;
         margin-bottom: 5px;
-        /* margin-left: auto;
-        margin-top: auto; */
+        display: flex;
+
+        visibility: hidden;
     }
 
 /* кнопка формы */
 .cross {
     /* visibility: hidden; */
-    width: 25px;
-    height: 25px;
+    width: 40px;
+    height: 40px;
     background-color: #ffffff00;
     /* background-image: url("img/games/cart1.jpg"); */
     cursor: pointer;
@@ -97,15 +98,117 @@ body {
 }
 
 /* картинка кнопки */
-.cross :nth-child(1) {
-    height: 25px;
-    width: 25px;
+.cross button {
+    height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
-    margin-top: -3px;
-    margin-left: -8px;
+    /* margin-top: -3px;
+    margin-left: -8px; */
 }
 
-.cart:hover .cart :nth-child(1) :nth-child(1){
+.pencil {
+    margin: 0;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff00;
+    cursor: pointer;
+    border: none;
+}
+
+/* картинка кнопки */
+.pencil button {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+.cart:hover :nth-child(3){
     visibility: visible;
+}
+
+.addImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.add_btn {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border: none;
+    background-color: #ffffff00;
+}
+
+.add_container {
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
+
+    
+    margin: auto 0;
+
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-family:"Montserrat";
+    font-weight: 500;
+    color: #fff;
+
+    visibility: hidden;
+}
+
+.add_container form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    background: rgba(48, 48, 48, 1);
+    padding: 20px 30px;
+}
+
+input {
+    margin: 10px 0;
+    padding: 7px;
+    border: unset;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    background-color: #535353;
+    outline: none;
+}
+
+textarea[name="new_text"] {
+    min-width: 400px;
+    max-width: 400px;
+    max-height: 230px;
+    min-height: 60px;
+    height: 60px;
+    margin: 10px 0;
+    padding: 7px;
+    border: unset;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    background-color: #535353;
+    outline: none;
+
+    font-size: large;
+}
+
+.add_container button {
+    /* color: #fff; */
+    background-color: #38d4ff;
+    cursor: pointer;
+    padding: 7px;
+    margin-top: 10px;
 }

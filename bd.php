@@ -96,6 +96,18 @@
      return $news;
      }
 
+     function get_new($db, $id) {
+        $sql = "select новость.идентификатор_новости, название, содержание, изображение from изображение
+                join новость on изображение.Новость_идентификатор_новости = новость.идентификатор_новости
+                WHERE новость.идентификатор_новости = '$id'
+                GROUP BY новость.идентификатор_новости, изображение
+                ORDER BY  новость.идентификатор_новости";
+        $result = mysqli_query($db, $sql);
+        $new = mysqli_fetch_array($result);
+        
+     return $new;
+     }
+
     function starts_with($haystack, $needle) {
         $count = strlen($needle);
         if (substr($haystack, 0, $count) == $needle) {
