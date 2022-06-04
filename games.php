@@ -1,6 +1,6 @@
 <?php
 
-// ÔÓ‰ÍÎ˛˜ÂÌËÂ Í ·‰ Ë Á‡ÔÓÒ ‚˚·ÓÍË Ë„ 
+// ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩ ÔøΩÔøΩ ÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩ 
 include 'bd.php';
 $db = connect_db();
 
@@ -55,17 +55,40 @@ if ($_GET['sort_id']) {
             ?>
                 <div class="cart" >
                     <div class="cartImg">
-                    <a href="cart.php?id=<?= $games[$j][0] ?>"><img href="img/games/<?=$games[$j][1]?>.jpg" src="img/games/<?=$games[$j][1]?>.jpg" alt=""></a>
+                        <a href="cart.php?id=<?= $games[$j][0] ?>"><img href="img/games/<?=$games[$j][1]?>.jpg" src="img/games/<?=$games[$j][1]?>.jpg" alt=""></a>
                     </div>
                     <div class="info">
                         <p id="nameGame" ><?= $games[$j][2] ?></p>
                         <!-- <p><?= $games[$j][3] ?></p> -->
                     </div>
+                    <?php
+                    if($_SESSION['user']['type'] === "–∞–¥–º–∏–Ω–∏—Å—Ç—Ä–∞—Ç–æ—Ä")
+                     echo '<form action="actions/delet_game.php" method="post">
+                                <button class="pencil" type="button" formaction="change_new.php" value="'. $games[$j][0] . '" name="id" id="btn1">
+                                    <img src="img/pencil2.svg" alt="">
+                                </button>
+                                <button class="cross" value="'. $games[$j][0] . '" name="id" id="btn2">
+                                    <img src="img/cross2.svg"  alt="">
+                                </button>
+                                
+                            </form>';
+                    ?> 
                 </div>
             <?php 
             // endif;
             endfor;
-            ?>                    
+            if($_SESSION['user']['type'] === "–∞–¥–º–∏–Ω–∏—Å—Ç—Ä–∞—Ç–æ—Ä"):
+            ?>
+                <div class="cart" id="add"> 
+                    <div class="addImg">
+                        <img src="img/plus3.png" alt="">
+                    </div>
+                    <div class="info">
+                        <p id="nameGame">–î–æ–±–∞–≤–∏—Ç—å –Ω–æ–≤—É—é –∏–≥—Ä—É</p>
+                    </div>
+                    <button class="add_btn"></button>
+                </div>    
+            <?php endif; ?>                       
             </div>
         </div>
     </div>

@@ -44,8 +44,9 @@ $news = get_news($db);
                         <?=$news[$j][2]?>
                     </div>
                     <?php
+                    if($_SESSION['user']['type'] === "администратор")
                      echo '<form action="actions/delet_news.php" method="post">
-                                <button class="pencil" value="'. $news[$j][0] . '" name="id" id="btn1">
+                                <button class="pencil"  formaction="change_new.php" value="'. $news[$j][0] . '" name="id" id="btn1">
                                     <img src="img/pencil2.svg" alt="">
                                 </button>
                                 <button class="cross" value="'. $news[$j][0] . '" name="id" id="btn2">
@@ -66,7 +67,6 @@ $news = get_news($db);
                     </div>
                     <div class="info">
                         <p id="nameGame">Добавить новую новость</p>
-                        <?=$news[$j][2]?>
                     </div>
                     <button class="add_btn"></button>
                 </div>    
@@ -75,6 +75,7 @@ $news = get_news($db);
             <div class="add_container">
                 <div class="add_body">
                     <form action="actions\add_news.php" method="post" class="form" enctype="multipart/form-data">
+                        <h1>Добавить новость</h1>
                         <label for="">Картинка новости</label>
                         <input type="file" name="new_img">
                         <label for="">Имя новости</label>
@@ -89,7 +90,8 @@ $news = get_news($db);
                     </form>
                 </div>
             </div>
-        </div>
+            
+        
     </section>
 
     <script src="js/add_new2.js"></script>

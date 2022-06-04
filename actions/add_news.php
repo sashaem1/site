@@ -11,7 +11,6 @@
         $path = 'img/newes/'. $_FILES['new_img']['name'];
         if(!move_uploaded_file($_FILES['new_img']['tmp_name'], '../'. $path)){
             $_SESSION['msg']='Ошибка при загрузке изображения';
-            echo "asdASDSADASD";
             header("Location: "."../newes.php");     
         }
 
@@ -20,10 +19,7 @@
         ORDER BY идентификатор_новости DESC");
         $news = mysqli_fetch_array($news);
         $id = $news[0];
-        // echo "хуц";
-        // echo count($news)-1;
-        // echo $id;
-        // echo "хуй";
+        
 
         mysqli_query($db,"INSERT INTO `изображение` (`id`, `изображение`, `Новость_идентификатор_новости`, `Игра_идентификатор_игры`) VALUES (NULL, '$file_name', '$id', NULL)");
 

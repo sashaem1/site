@@ -147,6 +147,8 @@ body {
     background-color: #ffffff00;
 }
 
+/* добавление новости */
+
 .add_container {
     position: fixed;
     z-index: 1; /* Sit on top */
@@ -168,6 +170,10 @@ body {
     color: #fff;
 
     visibility: hidden;
+}
+
+.add_container h1 {
+    margin: 10px 0;
 }
 
 .add_container form {
@@ -212,3 +218,6 @@ textarea[name="new_text"] {
     padding: 7px;
     margin-top: 10px;
 }
+
+/* редактирование новости */
+
